@@ -1,0 +1,41 @@
+/* header + fila + histórico de pedidos */
+.home{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+
+}
+
+/* fila + histórico de pedidos */
+.main{
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    max-width:1170px;
+}
+
+/* botão de adicionar pedido ("+ Adicionar pessoas a fila")*/
+.add-order{
+    border: none;
+    background-color: #E5CF94;
+    width: fit-content;
+    border-style: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color:#5F3305;
+
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* p: "Finalizados" */
+.finished{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color:#5F3305;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
