@@ -54,6 +54,15 @@
     font-weight: 400;
 }
 
+.custom-icons{
+    gap:10;
+}
+
+.custom-icon{
+    color: #5F3305;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 @media(max-width:1244px){
     .order{
         /* width:748px; */

@@ -1,0 +1,63 @@
+#edit-order {
+    position: fixed; /* Use fixed to align to the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This will center content vertically */
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    top: 0; /* Align to the top of the page */
+    left: 0; /* Align to the left of the page */
+    background: rgba(229, 207, 148, 0.5);
+}
+
+.edit-order-form{
+    min-width: 550px;
+    min-height: 370px;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: #fff;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+
+.checkbox-info{
+    font-size: 14px;
+    font-weight: 500;
+    color: #5F3305;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 5px;
+}
+
+.edit-order-form label{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 8%;
+    margin-bottom: 10px;
+    margin-right: 8px;
+
+    color: #5F3305;
+}
+
+.edit-order-form h1{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    align-self: center;
+    margin-bottom: 15px;
+    margin-top: 20px;
+
+    color: #5F3305;
+}
+
+@media(max-width:600px){
+    .edit-order-form{
+        width: 90%;
+        min-width: auto;
+    }
+}

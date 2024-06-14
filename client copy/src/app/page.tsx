@@ -38,14 +38,12 @@ export default function Home() {
   // abrir form de adicionar cliente/pedido
   const OpenCreateOrderForm = () => {
     setCreateOrder(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // fechar form de adicionar cliente/pedido
   const CloseCreateOrderForm = () =>{
     setCreateOrder(false);
   }
-
 
   return (
     <div className="home">

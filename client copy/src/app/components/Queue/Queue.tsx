@@ -1,9 +1,9 @@
-import Image from 'next/image';
+"use client";
 import axios from 'axios';
-import Delete from '@/src/app/assets/Delete-icon.png';
-import { CiEdit } from "react-icons/ci";
+import { CiEdit,  CiTrash } from "react-icons/ci";
 import './Queue.css';
 import { useEffect, useState } from 'react';
+import EditOrder from '../Forms/EditOrder';
 
 interface Order {
   id: number;
@@ -46,8 +46,45 @@ export default function Queue() {
     window.location.reload();
 
 };
-    
 
+  // State para ver se o form de editar pedido está aberto
+  const [editOrder, setEditOrder] = useState<boolean>(false);
+
+  const initialOrder : Order ={
+      id: 0,
+      customer_name: "",
+      numberOfBreads: 0,
+      totalPrice: 0,
+      createdAt: "",
+      updatedAt: "",
+      FulfilledOrder: false
+    }
+
+  const [currentOrder, setCurrentOrder] = useState<Order>(initialOrder);
+
+  // abrir form de editar pedido
+  const OpenEditOrderForm = () => {
+    setEditOrder(true);
+  };
+
+    // adiciona classe ao html para não haver overflow-y (para que o form ocupe toda tela)
+  useEffect(() => {
+    if (editOrder) {
+      document.documentElement.classList.add('no-scroll');
+    } else {
+      document.documentElement.classList.remove('no-scroll');
+    }
+  }, [editOrder]);
+
+  // fechar form de editar pedido
+  const CloseEditOrderForm = () =>{
+    setEditOrder(false);
+  }
+
+  const handleEdit = (order: Order) => {
+    setCurrentOrder(order);
+    OpenEditOrderForm();
+  };
 
   return (
     <section className="queue">
@@ -65,13 +102,19 @@ export default function Queue() {
                 </p>
               </div>
             </div>
-            <div style={{gap:'100px'}}>
-              <button onClick={() => handleDelete(order.id)}> <Image src={Delete} alt="delete order" /> </button>
-              <button><CiEdit size={35} color="#5F3305"  style={{backgroundColor:'rgba(255, 255, 255, 0.8'}}className="custom-icon" /></button>
+            <div className='custom-icons'>
+              <button onClick={() => handleDelete(order.id)}> <CiTrash size={30} className="custom-icon"/> </button>
+              <button onClick={() => handleEdit(order)}><CiEdit size={30} className="custom-icon" /></button>
             </div>
+
           </li>
         ))}
+
       </ul>
+
+    {editOrder?
+    <EditOrder closeEditOrderForm={CloseEditOrderForm} order={currentOrder}></EditOrder>: ""}
+
     </section>
   );
 }

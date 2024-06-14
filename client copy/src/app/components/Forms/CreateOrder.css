@@ -1,6 +1,6 @@
 /* create order bg */
 .create-order{
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     z-index: 100;

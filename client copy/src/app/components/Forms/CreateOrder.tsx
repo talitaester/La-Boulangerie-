@@ -46,8 +46,10 @@ const CreateOrder: React.FC<CreateOrderProps> = ({ closeCreateOrderForm }) => {
                     placeholder='Total de pães'
                     className='order-input'
                     required
+                    min="0"
                     value={totalBreads}
                     onChange={(e) => setTotalBreads(parseInt(e.target.value))}
+
                 />
 
                 <div className='form-buttons'>
