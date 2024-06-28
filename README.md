@@ -5,4 +5,5 @@ Buscamos implementar um sistema de gerenciamento de pedidos em uma padaria. Esse
 
 ## Aparencia 
 O front-end foi desenvolvido usando Typescritp, React e NextJS. Seeguimos o design proposto e essa é cara do nosso projeto!
+
 ![Essa é cara do nosso sistema!](https://github.com/talitaester/La-Boulangerie-/assets/123506901/d992d9f2-7f13-4bd8-a4a3-5b1d1881c5c1)
